@@ -65,8 +65,18 @@ class DetailsController < ApplicationController
   def email
     UserMailer.welcome_email(@detail).deliver_later
     respond_to do |format|
-      format.html { redirect_to @detail, notice: 'Mail was sent.' }
-      format.json { render :show, status: :ok, location: @detail }
+      format.html { redirect_to details_url, notice: 'Mail was sent.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def emailAll
+    @details.each do |detail|
+      UserMailer.welcome_email(@detail).deliver_now
+    end
+    respond_to do |format|
+      format.html { redirect_to details_url, notice: 'Mail was sent to all.' }
+      format.json { head :no_content }
     end
   end
 
