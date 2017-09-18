@@ -28,7 +28,7 @@ class DetailsController < ApplicationController
 
     respond_to do |format|
       if @detail.save
-        UserMailer.welcome_email(@user).deliver_later
+        UserMailer.welcome_email(@detail).deliver_later
         format.html { redirect_to @detail, notice: 'Detail was successfully created.' }
         format.json { render :show, status: :created, location: @detail }
       else
@@ -59,6 +59,14 @@ class DetailsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to details_url, notice: 'Detail was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def email
+    UserMailer.welcome_email(@detail).deliver_later
+    respond_to do |format|
+      format.html { redirect_to @detail, notice: 'Mail was sent.' }
+      format.json { render :show, status: :ok, location: @detail }
     end
   end
 
