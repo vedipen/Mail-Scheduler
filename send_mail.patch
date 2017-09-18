@@ -1,0 +1,51 @@
+diff --git a/Gemfile.lock b/Gemfile.lock
+index f90ccc4..1ba4310 100644
+--- a/Gemfile.lock
++++ b/Gemfile.lock
+@@ -186,6 +186,7 @@ GEM
+ 
+ PLATFORMS
+   ruby
++  x86_64-darwin-16
+ 
+ DEPENDENCIES
+   byebug
+diff --git a/app/mailers/application_mailer.rb b/app/mailers/application_mailer.rb
+index 286b223..cca9dee 100644
+--- a/app/mailers/application_mailer.rb
++++ b/app/mailers/application_mailer.rb
+@@ -1,4 +1,4 @@
+ class ApplicationMailer < ActionMailer::Base
+-  default from: 'from@example.com'
++  default from: 'vedharish@gmail.com'
+   layout 'mailer'
+ end
+diff --git a/app/mailers/user_mailer.rb b/app/mailers/user_mailer.rb
+index 0c75f0c..88ee9c1 100644
+--- a/app/mailers/user_mailer.rb
++++ b/app/mailers/user_mailer.rb
+@@ -1,5 +1,5 @@
+ class UserMailer < ApplicationMailer
+-  default from: 'notifications@example.com'
++  default from: 'ved.harish3@gmail.com'
+ 
+   def welcome_email(user)
+     @user = user
+diff --git a/config/environments/development.rb b/config/environments/development.rb
+index 37ee9b0..509f81f 100644
+--- a/config/environments/development.rb
++++ b/config/environments/development.rb
+@@ -60,10 +60,10 @@ Rails.application.configure do
+   config.action_mailer.delivery_method = :smtp
+ 
+   config.action_mailer.smtp_settings = {
+-       :address => "localhost",
++    :address => "smtp.gmail.com",
+        :port => 587,
+-       :user_name => "email",
+-       :password => "password",
++       :user_name => "ved.harish3@gmail.com",
++       :password => "gwmgmlcnlvqmackw",
+        :authentication => :plain,
+        :enable_starttls_auto => true
+   }
