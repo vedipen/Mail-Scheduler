@@ -1,24 +1,17 @@
-# README
+# Mail Scheduler
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A no-UI rails app where user can add entries as email and mobile. And send email to these entries specifically one by one or can send to all.  
+The email can be an invitation or a newsletter. Currently a welcome email message.
 
-Things you may want to cover:
+# Features
+* Admin Sign Up
+* Email confirmation for admin
+* Admin Log In
+* Add/Edit/Delete entries
+* Send email to individual entries
+* Send email to all entries
+* Success/error flash messages
+* Uses gmail smtp
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* <i>Provide your email details at config/environments/development.rb</i>
